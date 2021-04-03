@@ -7,7 +7,7 @@ const featureSchema = new mongoose.Schema({
     required: true,
   },
   qty: {
-    type: SVGAnimatedNumber,
+    type: Number,
     required: true,
   },
   imageUrl: {
@@ -16,7 +16,7 @@ const featureSchema = new mongoose.Schema({
   },
   itemId: {
     type: ObjectId,
-    ref: Item,
+    ref: "Item",
   },
 });
 
