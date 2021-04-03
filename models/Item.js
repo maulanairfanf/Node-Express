@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const [ObjectId] = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
+
 const itemSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -11,7 +12,7 @@ const itemSchema = new mongoose.Schema({
   },
   country: {
     type: String,
-    required: true,
+    default: "Indonesia",
   },
   city: {
     type: String,
@@ -19,10 +20,23 @@ const itemSchema = new mongoose.Schema({
   },
   isPopular: {
     type: Boolean,
+    default: false,
   },
   description: {
     type: String,
     required: true,
+  },
+  unit: {
+    type: String,
+    default: "night",
+  },
+  sumBooking: {
+    type: Number,
+    default: 0,
+  },
+  categoryId: {
+    type: ObjectId,
+    ref: "Category",
   },
   imageId: [
     {
